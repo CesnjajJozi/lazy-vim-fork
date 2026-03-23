@@ -42,6 +42,17 @@ return {
       --   desc = "File Explorer",
       -- },
       {
+        -- Overriding the default file key bind for file search because OOTB it doesnt automatically evaluate cwd. Zoxide fix
+        -- Could use <leader>fF OOTB but its a bit too long and not as intuitive as <leader>ff
+        -- When OOTB implements cwd evaluation for file search, we can remove this custom key bind and use the OOTB one
+        -- OOTB <leader>fF also doesnt work withou custom zoxide.lua plugin. Custom plugin allows to use zoxide inside nvim.
+        "<leader>ff",
+        function()
+          Snacks.picker.files({ cwd = vim.fn.getcwd() })
+        end,
+        desc = "[CUSTOM] Find Files (cwd)",
+      },
+      {
         "<leader>sn",
         function()
           Snacks.picker.files({ cwd = "~/.config/lazy-vim-fork" })
