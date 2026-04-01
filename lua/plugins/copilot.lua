@@ -25,7 +25,8 @@ return {
       { "nvim-lua/plenary.nvim", branch = "master" },
     },
     opts = {
-      model = "claude-sonnet-4.6",
+      model = "gpt-4.1",
+      -- model = "claude-sonnet-4.6",
       agent = "copilot",
       mappings = {
         accept_diff = {
