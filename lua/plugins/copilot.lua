@@ -8,17 +8,13 @@ return {
         event = "InsertEnter",
         opts = {
           suggestion = {
-            enabled = false,
-            auto_trigger = true,
-            hide_during_completion = true,
-            debounce = 75,
-            trigger_on_accept = true,
-            keymap = {
-              accept = "ł", -- <A-l>
-            },
+            enabled = false, -- completely disable autocomplete
           },
           panel = {
-            enabled = false,
+            enabled = false, -- disable panel UI
+          },
+          nes = {
+            enabled = false, -- disable next edit suggestions
           },
         },
       },
